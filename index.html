@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+   
+   
+</head>
+<body>
+    <h1>Formulario de Contacto</h1>
+    <nav>
+        <button onclick="showTab('contactoForm')">Formulario</button>
+        <button onclick="showTab('qrCode')">QR Code</button>
+        <button onclick="showTab('vCard')">vCard</button>
+        
+    </nav>
+    <div id="contactoForm" class="tab active">
+        <form id="form">
+            <fieldset>
+            <h2> Datos Personales</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Su Nombre" required>
+            <label for="telefono">Telefono:</label>
+            <input type="text" id="telefono" placeholder="Su Telefono" required><br>
+            <label for="direccion">Direccion:</label>
+            <input type="text" id="direccion" placeholder="Su direccion" required>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Example@gmail.com" required><br>
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" placeholder="Donde trabaja" required> <br>
+        
+        </fieldset>
+            <button type="button" onclick="generarSalida()">Guardar</button>
+        </form>
+    </div>
+    
+    <div id="vCard" class="tab">
+        <div id="vCardTexto"></div>
+    </div>
+    <div id="qrCode" class="tab">
+        <canvas id="qrCanvas"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
